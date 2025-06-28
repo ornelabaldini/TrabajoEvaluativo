@@ -175,7 +175,8 @@ button:hover {
 
 /* 6. Bloque 300x300 con overflow controlado */
 .bloque {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 300px;
   background-color: #fff;
   border: 2px solid #888;
@@ -191,9 +192,10 @@ button:hover {
   background-size: cover;
   background-position: center;
   border-radius: 12px;
-  padding: 40px 20px;
+  padding: 30px 15px;
   margin: 20px auto;
-  max-width: 800px;
+  max-width: 100%;
+  width: 90%;
   text-align: center;
   box-shadow: 0 0 15px rgba(153, 102, 204, 0.3);
   color: whitesmoke;
@@ -274,4 +276,93 @@ footer {
   font-size: 0.9em;
   border-top: 2px solid #d9b3ff;
   margin-top: auto; 
+}
+
+/* --- Media queries para dispositivos móviles (max-width 768px) --- */
+@media (max-width: 768px) {
+  
+  /* Main info se vuelve columna */
+  main.info {
+    flex-direction: column;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  main.info .principal,
+  main.info .lateral {
+    flex: unset;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  /* Tarjetas apilan vertical */
+  .tarjetas-container {
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .tarjeta {
+    flex: unset;
+    width: 100%;
+    min-width: unset;
+    padding: 20px;
+    border-width: 6px;
+  }
+
+  /* Imagen de tarjeta ajusta al 100% */
+  .tarjeta img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Botones ancho completo */
+  button, .boton-red {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  /* Bloque flexible y centrado */
+  .bloque {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Ajustes en hero para que no queden muy altos */
+  .hero {
+    height: 200px;
+  }
+
+  /* Texto hero centrado y con menos padding */
+  .texto-hero {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+
+  /* Footer y header menú apilan vertical */
+  header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Logo más chico */
+  .logo {
+    height: 30px;
+  }
+
+  header h1 {
+    font-size: 1.4em;
+    flex-basis: 100%;
+    text-align: center;
+  }
 }
