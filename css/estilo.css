@@ -1,0 +1,277 @@
+/*-- 1. Cabecera siempre visible: header fijo y estilo de logo y título --*/
+body {
+  font-family: 'IM Fell English SC', serif;
+  margin: 0; 
+  padding: 0;
+  background-color: #bfadf1;
+  color: #1a1a1a;
+  font-weight: bold; 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+  padding: 10px 20px;
+  position: fixed; /* Fijo para que quede siempre visible */
+  top: 0;
+  width: 100%;
+  background-color: #f9e6ff;
+  border-bottom: 2px solid #d9b3ff;
+  z-index: 1000;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+  flex-shrink: 0;
+}
+
+/*-- 2. Menú de navegación alineado a la derecha --*/
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+nav a {
+  text-decoration: none;
+  color: #6a1b9a;
+  font-weight: bold;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
+  margin-top: 60px; 
+}
+
+/*-- 4. Contenido principal - estilos generales para portada, info y contacto --*/
+.hero {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  border: 5px solid #aaa;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.texto-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 10px solid #aaa;
+}
+
+/*-- 3. Sección lateral para página info (datos curiosos) --*/
+main.info {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  margin-left: 20px;
+}
+
+main.info .principal {
+  flex: 3;
+}
+
+main.info .lateral {
+  flex: 1.5;
+  background-color: #f0e6ff;
+  padding: 10px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-right: 20px;
+  max-height: 200px; 
+}
+
+/* Foto equipo */
+.foto-equipo {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: block;
+  object-fit: cover;
+  margin-left: 20px;
+}
+
+/*-- 5. Tarjetas productos en portada: flex-wrap para que se adapten y gap entre ellas --*/
+.tarjetas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  background-color: #bc1888;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.tarjeta {
+  padding: 30px;
+  border: 10px solid #aaa;
+  border-radius: 8px;
+  text-align: center;
+  box-sizing: border-box;
+  flex: 1 1 calc(33.33% - 20px);
+  min-width: 250px;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.precio {
+  color: #070008;
+  font-size: 1.2em;
+}
+
+/* Botones generales */
+button {
+  background-color: #d1a3ff;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-family: 'IM Fell English SC', serif;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a566c1;
+}
+
+/* 6. Bloque 300x300 con overflow controlado */
+.bloque {
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border: 2px solid #888;
+  padding: 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  overflow: auto; /* Controla que el contenido no se salga */
+}
+
+/*-- Estilos formulario contacto --*/
+.contacto {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/miramar.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(153, 102, 204, 0.3);
+  color: whitesmoke;
+}
+
+.contacto p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.contacto ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.contacto li {
+  margin-bottom: 10px;
+}
+
+/* Botones redes sociales */
+.redes {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/miramar.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 50px 20px;
+  border-radius: 10px;
+  text-shadow: 1px 1px 3px black;
+}
+
+.boton-red {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 10px 10px 0 0;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+.boton-red:hover {
+  transform: scale(1.05);
+}
+
+.boton-instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: white;
+}
+
+.boton-facebook {
+  background-color: #3b5998;
+  color: white;
+}
+
+.boton-whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+/* Botón agregar carrito */
+.agregar-carrito {
+  background-color: #340152;
+  color: rgb(0, 0, 0);
+}
+
+/*-- 7. Pie de página permanente: estilo y margen para que quede siempre abajo --*/
+footer {
+  background-color: #f3e5f5;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  border-top: 2px solid #d9b3ff;
+  margin-top: auto; 
+}

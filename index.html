@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Golosinas Aries - Inicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilo.css" />
+</head>
+<body>
+
+  <!-- 1. Cabecera siempre visible (con logo y nombre) -->
+  <header>
+    <img src="img/logo.png" alt="Logo Golosinas Aries" class="logo" /> <!-- Logo -->
+    <h1>🍭 Golosinas Aries 🍭</h1>
+    <!-- 2. Menú de navegación -->
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="info.html">Info</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 4. Contenido principal - Portada: mensaje de bienvenida + imagen destacada -->
+    <section class="hero" aria-label="Portada">
+      <img src="img/logo.png" alt="Portada Golosinas Aries" />
+      <div class="texto-hero">
+        <h2>Bienvenid@s a Golosinas Aries 🍭</h2>
+        <p>Combos únicos desde la costa de Miramar 🌊</p>
+      </div>
+    </section>
+
+    <!-- 5. Tarjetas de servicios (3 cajas con título, imagen, texto breve) -->
+    <section aria-labelledby="titulo-productos">
+      <h2 id="titulo-productos">Nuestros Productos</h2>
+      <div class="tarjetas-container">
+        <article class="tarjeta">
+          <img src="img/ojo.png" alt="Gomitas con forma de ojos" />
+          <h3>Gomitas con forma de ojos</h3>
+          <p class="precio">$20</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </article>
+
+        <article class="tarjeta">
+          <img src="img/auto.png" alt="Auto relleno de caramelos" />
+          <h3>Auto relleno de caramelos</h3>
+          <p class="precio">$25</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </article>
+
+        <article class="tarjeta">
+          <img src="img/chupetin.png" alt="Chupetines" />
+          <h3>Chupetines</h3>
+          <p class="precio">$30</p>
+          <button class="agregar-carrito">Agregar al carrito</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. Bloque 300x300 con desborde controlado -->
+    <section class="bloque" aria-label="Información adicional sobre combos">
+      <h3>Sobre nuestros combos 🍬</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rutrum, mauris ac vehicula sollicitudin, nulla risus tincidunt justo, et convallis lorem purus a nibh. Suspendisse potenti. Sed gravida, ex eu aliquam posuere, sem nulla facilisis justo, nec condimentum velit nulla eu augue. Nullam at justo ut metus convallis lobortis. Praesent eget ex vitae nibh malesuada dapibus.
+      </p>
+    </section>
+  </main>
+
+  <!-- 7. Pie de página permanente -->
+  <footer>
+    <p>Hacemos envíos a todo el país 🍭</p>
+    <p>
+      Encontranos 📍
+      <a href="https://www.google.com/maps/place/Miramar,+Provincia+de+Buenos+Aires" target="_blank" rel="noopener noreferrer">
+        Miramar 🌊 Buenos Aires
+      </a> 
+      🧁 ¡Los esperamos! 🍭
+    </p>
+  </footer>
+
+</body>
+</html>
