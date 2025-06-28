@@ -281,7 +281,6 @@ footer {
 /* --- Media queries para dispositivos móviles (max-width 768px) --- */
 @media (max-width: 768px) {
   
-  /* Main info se vuelve columna */
   main.info {
     flex-direction: column;
     margin-left: 0;
@@ -295,7 +294,6 @@ footer {
     margin: 0 0 20px 0;
   }
 
-  /* Tarjetas apilan vertical */
   .tarjetas-container {
     flex-direction: column;
     padding: 10px;
@@ -310,13 +308,12 @@ footer {
     border-width: 6px;
   }
 
-  /* Imagen de tarjeta ajusta al 100% */
   .tarjeta img {
     max-width: 100%;
     height: auto;
   }
 
-  /* Botones ancho completo */
+
   button, .boton-red {
     width: 100%;
     max-width: 100%;
@@ -325,25 +322,21 @@ footer {
     padding: 12px;
   }
 
-  /* Bloque flexible y centrado */
   .bloque {
     max-width: 100%;
     width: 100%;
     height: auto;
   }
 
-  /* Ajustes en hero para que no queden muy altos */
   .hero {
     height: 200px;
   }
 
-  /* Texto hero centrado y con menos padding */
   .texto-hero {
     padding: 8px 12px;
     font-size: 1rem;
   }
 
-  /* Footer y header menú apilan vertical */
   header {
     flex-wrap: wrap;
     gap: 10px;
@@ -355,7 +348,6 @@ footer {
     gap: 10px;
   }
 
-  /* Logo más chico */
   .logo {
     height: 30px;
   }
