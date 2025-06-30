@@ -19,6 +19,7 @@ header {
   position: fixed; /* Fijo para que quede siempre visible */
   top: 0;
   width: 100%;
+  height: 60px;
   background-color: #f9e6ff;
   border-bottom: 2px solid #d9b3ff;
   z-index: 1000;
@@ -52,12 +53,25 @@ nav a {
   text-decoration: none;
   color: #6a1b9a;
   font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
+nav a:hover,
+nav a[aria-current="page"] {
+  background-color: #d9b3ff;
+  color: #3a0066;
+}
+
+/*-- 3. Margen superior para main para no tapar contenido por header fijo --*/
 main {
   flex-grow: 1;
   padding: 20px;
   margin-top: 60px; 
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*-- 4. Contenido principal - estilos generales para portada, info y contacto --*/
@@ -68,6 +82,7 @@ main {
   overflow: hidden;
   margin-bottom: 30px;
   border: 5px solid #aaa;
+  border-radius: 10px;
 }
 
 .hero img {
@@ -75,6 +90,7 @@ main {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 10px;
 }
 
 .texto-hero {
@@ -85,10 +101,110 @@ main {
   color: white;
   text-align: center;
   text-shadow: 2px 2px 5px black;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: 12px 20px;
   border-radius: 8px;
+  border: 8px solid #aaa;
+  max-width: 90%;
+  box-sizing: border-box;
+}
+
+.texto-hero h2 {
+  margin: 0 0 10px 0;
+  font-size: 2.2rem;
+}
+
+.texto-hero p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/*-- 5. Tarjetas productos en portada: flex-wrap para que se adapten y gap entre ellas --*/
+.tarjetas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  margin-top: 30px;
+  background-color: #bc1888;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.tarjeta {
+  padding: 30px;
   border: 10px solid #aaa;
+  border-radius: 8px;
+  text-align: center;
+  box-sizing: border-box;
+  flex: 1 1 calc(33.33% - 20px);
+  min-width: 250px;
+  background-color: #fff;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.precio {
+  color: #070008;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Botones generales */
+button {
+  background-color: #d1a3ff;
+  border: none;
+  color: #340152;
+  padding: 10px 15px;
+  font-family: 'IM Fell English SC', serif;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+  min-width: 140px;
+}
+
+button:hover {
+  background-color: #a566c1;
+  color: white;
+}
+
+/*-- 6. Bloque 300x300 con overflow controlado --*/
+.bloque {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border: 2px solid #888;
+  padding: 15px;
+  box-sizing: border-box;
+  margin: 0 auto 30px auto;
+  overflow: auto;
+  border-radius: 10px;
+  color: #1a1a1a;
+  font-weight: normal;
+}
+
+/*-- Foto equipo --*/
+.foto-equipo {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: block;
+  object-fit: cover;
+  margin-left: 20px;
 }
 
 /*-- 3. Sección lateral para página info (datos curiosos) --*/
@@ -110,84 +226,21 @@ main.info .lateral {
   border-radius: 8px;
   box-sizing: border-box;
   margin-right: 20px;
-  max-height: 200px; 
+  max-height: 200px;
 }
 
-/* Foto equipo */
-.foto-equipo {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 8px;
-  margin-top: 20px;
-  display: block;
-  object-fit: cover;
-  margin-left: 20px;
-}
-
-/*-- 5. Tarjetas productos en portada: flex-wrap para que se adapten y gap entre ellas --*/
-.tarjetas-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 20px;
-  background-color: #bc1888;
-  box-sizing: border-box;
-  justify-content: space-between;
-}
-
-.tarjeta {
-  padding: 30px;
-  border: 10px solid #aaa;
-  border-radius: 8px;
+/*-- 7. Pie de página permanente: estilo y margen para que quede siempre abajo --*/
+footer {
+  background-color: #f3e5f5;
   text-align: center;
-  box-sizing: border-box;
-  flex: 1 1 calc(33.33% - 20px);
-  min-width: 250px;
-}
-
-.tarjeta img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.precio {
-  color: #070008;
-  font-size: 1.2em;
-}
-
-/* Botones generales */
-button {
-  background-color: #d1a3ff;
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  font-family: 'IM Fell English SC', serif;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #a566c1;
-}
-
-/* 6. Bloque 300x300 con overflow controlado */
-.bloque {
-  width: 100%;
-  max-width: 300px;
-  height: 300px;
-  background-color: #fff;
-  border: 2px solid #888;
   padding: 15px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  overflow: auto; /* Controla que el contenido no se salga */
+  font-size: 0.9em;
+  border-top: 2px solid #d9b3ff;
+  margin-top: auto; 
 }
 
 /*-- Estilos formulario contacto --*/
-.contacto {
+main.contacto {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/miramar.png');
   background-size: cover;
   background-position: center;
@@ -201,25 +254,41 @@ button:hover {
   color: whitesmoke;
 }
 
-.contacto p {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+main.contacto h2 {
+  margin-bottom: 15px;
+  font-size: 2rem;
 }
 
-.contacto ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin-top: 20px;
+main.contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.contacto li {
-  margin-bottom: 10px;
+main.contacto label {
+  font-weight: bold;
+  text-align: left;
 }
 
-/* Botones redes sociales */
+main.contacto input,
+main.contacto textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+main.contacto button {
+  width: 100%;
+}
+
+/*-- Botones redes sociales --*/
 .redes {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/miramar.png');
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../img/miramar.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -241,6 +310,7 @@ button:hover {
   text-align: center;
   transition: transform 0.2s ease;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
 }
 
 .boton-red:hover {
@@ -262,20 +332,10 @@ button:hover {
   color: white;
 }
 
-/* Botón agregar carrito */
+/*-- Botón agregar carrito --*/
 .agregar-carrito {
   background-color: #340152;
-  color: rgb(0, 0, 0);
-}
-
-/*-- 7. Pie de página permanente: estilo y margen para que quede siempre abajo --*/
-footer {
-  background-color: #f3e5f5;
-  text-align: center;
-  padding: 15px;
-  font-size: 0.9em;
-  border-top: 2px solid #d9b3ff;
-  margin-top: auto; 
+  color: rgb(255 255 255);
 }
 
 /* --- Media queries para dispositivos móviles (max-width 768px) --- */
@@ -313,14 +373,14 @@ footer {
     height: auto;
   }
 
+ button, .boton-red {
+  width: calc(100% - 20px); /* resta 20px para que quede margen */
+  margin: 0 10px 10px 10px; /* margen horizontal para separar de los bordes */
+  font-size: 1em;
+  padding: 12px;
+  box-sizing: border-box; /* para que el padding no exceda el ancho */
+}
 
-  button, .boton-red {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 10px;
-    font-size: 1em;
-    padding: 12px;
-  }
 
   .bloque {
     max-width: 100%;
@@ -329,17 +389,35 @@ footer {
   }
 
   .hero {
-    height: 200px;
+    min-height: 200px;
+    height: auto;
   }
 
   .texto-hero {
-    padding: 8px 12px;
+    padding: 6px 10px;
+    font-size: 1rem;
+    border-width: 4px;
+    max-width: 95%;
+    box-sizing: border-box;
+  }
+
+  .texto-hero h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .texto-hero p {
     font-size: 1rem;
   }
 
   header {
     flex-wrap: wrap;
     gap: 10px;
+    height: auto;
+    padding: 10px;
   }
 
   nav ul {
@@ -358,3 +436,4 @@ footer {
     text-align: center;
   }
 }
+
