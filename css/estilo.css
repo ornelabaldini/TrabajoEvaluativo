@@ -332,8 +332,8 @@ main.contacto button {
   color: white;
 }
 
-/*-- Botón agregar carrito --*/
-.agregar-carrito {
+/*-- Botón Me gusta --*/
+.me-gusta {
   background-color: #340152;
   color: rgb(255 255 255);
 }
